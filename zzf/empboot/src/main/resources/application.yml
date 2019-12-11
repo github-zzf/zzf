@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/company?serverTimezone=UTC&characterEncoding=UTF-8
+    #数据库连接池
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 8
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 3000000
+      connection-test-query: select 1
+  #热部署
+  thymeleaf:
+    cache: false
+    mode: HTML5
+  #热部署
+  devtools:
+    restart:
+      enabled: true
+    #mvc:
+    #static-path-pattern: /static/**
+server:
+  port: 8090
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.emp.empboot.entity

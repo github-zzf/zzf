@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/jquery-1.9.1.js}"></script>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet"/>
+</head>
+<body>
+<div style="width:400px;margin:20px auto">
+    <table class="table table-bordered">
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+
+        <tr th:each="emp:${list}">
+            <td th:text="${emp.id}"></td>
+            <td th:text="${emp.name}"></td>
+            <td th:text="${emp.sex}"></td>
+            <td th:text="${emp.age}"></td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
